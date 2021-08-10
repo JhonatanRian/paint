@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, PhotoImage, Frame, Label, Button, Spinbox, Canvas, colorchooser
 import pyscreenshot
 
 class Paint:
@@ -40,7 +40,7 @@ class Paint:
         self.label_colors_choose: Label = Label(self.bar_menu, text="  Color Choose:  ", fg="white", bg="#3b3b3b")
         self.label_colors_choose.pack(side="left")
         
-        self.colors_choose: Button = Button(self.bar_menu, image=self.img_square, command=None)
+        self.colors_choose: Button = Button(self.bar_menu, image=self.img_square, command=self.selected_color)
         self.colors_choose.pack(side="left")
             
         self.text_pen_size: Label = Label(self.bar_menu, text=" Size: ", fg="white", bg="#3b3b3b")
@@ -67,6 +67,8 @@ class Paint:
         self.area_draw: Canvas = Canvas(self.window, height=720, bg="gainsboro")
         self.area_draw.pack(fill="both")
         self.area_draw.bind("<B1-Motion>", self.draw)
+        self.window.bind("<F1>", self.clean)
+        self.window.bind("<F2>", self.save)
         
         self.window.mainloop()
         
@@ -99,10 +101,10 @@ class Paint:
         self.line_brush: bool = False
         self.erase_brush: bool = False
         
-    def clean(self: object) -> None:
+    def clean(self: object, event) -> None:
         self.area_draw.delete("all")
         
-    def save(self: object) -> None:
+    def save(self: object, event) -> None:
         
         x = self.window.winfo_rootx() + self.area_draw.winfo_x()
         y = self.window.winfo_rooty() + self.area_draw.winfo_y()
@@ -112,7 +114,8 @@ class Paint:
         img = pyscreenshot.grab(bbox=(x, y, x1, y1))
         img.save("image.jpeg", "jpeg")
         
-    def selected_color(self: object) -> None:
-        colorchoose.askcolor
+    def selected_color(self: object) -> str:
+        color = colorchooser.askcolor()
+        self.pick_colors = color[1]
         
 Paint()
