@@ -1,6 +1,6 @@
 # 👋😃 Hello !!!
 
-![exemple](https://raw.githubusercontent.com/JhonatanRian/tk_notepad/main/exemple/tkinter-_online-video-cutter.com_.gif)
+![exemple](https://raw.githubusercontent.com/JhonatanRian/paint/main/exemple/vokoscreenNG-2021-08-10_16-28-43.gif)
 
 #### 📒+🖥 I am a student, passionate about information technology.
 
