@@ -67,8 +67,6 @@ class Paint:
         self.area_draw: Canvas = Canvas(self.window, height=720, bg="gainsboro")
         self.area_draw.pack(fill="both")
         self.area_draw.bind("<B1-Motion>", self.draw)
-        self.window.bind("<F1>", self.clean)
-        self.window.bind("<F2>", self.save)
         
         self.window.mainloop()
         
@@ -101,10 +99,10 @@ class Paint:
         self.line_brush: bool = False
         self.erase_brush: bool = False
         
-    def clean(self: object, event) -> None:
+    def clean(self: object) -> None:
         self.area_draw.delete("all")
         
-    def save(self: object, event) -> None:
+    def save(self: object) -> None:
         
         x = self.window.winfo_rootx() + self.area_draw.winfo_x()
         y = self.window.winfo_rooty() + self.area_draw.winfo_y()
