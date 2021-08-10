@@ -4,7 +4,7 @@
 
 #### 📒+🖥 I am a student, passionate about information technology.
 
-#### Create a paint with python and tkinter
+#### I made a program to draw, in this program I used python, lib tkinter and pyscreenshot
 
 ##### technologies used:
 ✅ Python
